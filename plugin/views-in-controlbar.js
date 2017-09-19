@@ -1,6 +1,5 @@
 videojs.registerPlugin('viewsInControlbar', function () {
   var myPlayer = this,
-    viewsCount,
     viewsObject = [],
     options = [];
     options.requestType = 'GET',
@@ -17,6 +16,7 @@ videojs.registerPlugin('viewsInControlbar', function () {
     // +++ Make the request to the Analytics API +++
     // Extract views from data returned by Analytics API
     makeRequest(options, function (viewsRaw) {
+      var viewsCount;
       // Remove console.log command for production code
       console.log('viewsRaw', viewsRaw);
       viewsObject = JSON.parse(viewsRaw);
@@ -24,7 +24,7 @@ videojs.registerPlugin('viewsInControlbar', function () {
       viewsCount = viewsObject.alltime_video_views;
       console.log('views', viewsCount);
       // Call function to place data in controlbar
-      placeCountInControlbar();
+      placeCountInControlbar(viewsCount);
     });
   });
 });
@@ -33,7 +33,7 @@ videojs.registerPlugin('viewsInControlbar', function () {
  * Dynamically build a div that is then
  * placed in the controlbar's spacer element
  */
-function placeCountInControlbar() {
+function placeCountInControlbar(viewsCount) {
   var spacer,
     newElement = document.createElement('div');
   //Place data in div
