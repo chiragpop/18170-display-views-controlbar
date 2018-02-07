@@ -12,6 +12,8 @@ videojs.registerPlugin('viewsInControlbar', function () {
     // +++ Setup for video views Analytics API request +++
     var videoID = myPlayer.mediainfo.id,
       accountID = myPlayer.mediainfo.accountId;
+    console.log('videoID', videoID);
+    console.log('accountID', accountID);
     // Build the Analytics API endpoint
     options.url = 'https://analytics.api.brightcove.com/v1/alltime/accounts/' + accountID + '/videos/' + videoID;
     // +++ Make the request to the Analytics API +++
