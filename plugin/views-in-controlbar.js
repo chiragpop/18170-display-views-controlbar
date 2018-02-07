@@ -11,9 +11,9 @@ videojs.registerPlugin('viewsInControlbar', function () {
   myPlayer.on('loadstart', function () {
     // +++ Setup for video views Analytics API request +++
     var videoID = myPlayer.mediainfo.id,
-      accountID = myPlayer.bcinfo.accountId;
+      accountID = myPlayer.mediainfo.accountId;
     
-    console.log('myplayer', myPlayer);
+    //console.log('myplayer', myPlayer);
     console.log('videoID', videoID);
     console.log('accountID', accountID);
     // Build the Analytics API endpoint
