@@ -4,7 +4,8 @@ videojs.registerPlugin('viewsInControlbar', function () {
     options = [];
     options.requestType = 'GET',
     //options.proxyURL = 'https://solutions.brightcove.com/bcls/bcls-proxy/doc-samples-proxy.php',
-    options.proxyURL = 'https://localhost/brightcove/proxy.php',
+    //options.proxyURL = 'https://localhost/brightcove/proxy.php',
+    options.proxyURL = 'http://10.150.142.193/Brightcove/proxy.php',
     options.requestBody = '';
   // Wait for loadstart event so mediainfo is populated
   // and the video ID and account ID can be retrieved
