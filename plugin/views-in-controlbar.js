@@ -108,7 +108,7 @@ function makeRequest(options, callback) {
             response = null;
           }
           // return the response
-          console.log(response);
+          console.log("response: "+response);
           callback(response);
         } else {
            console.log('There was a problem with the request. Request returned ' + httpRequest.status);
