@@ -13,8 +13,7 @@ videojs.registerPlugin('viewsInControlbar', function () {
     // +++ Setup for video views Analytics API request +++
     var videoID = myPlayer.mediainfo.id,
       accountID = myPlayer.mediainfo.accountId;
-    
-    console.log('myplayer', myPlayer);
+   
     console.log('videoID', videoID);
     console.log('accountID', accountID);
     // Build the Analytics API endpoint
@@ -99,6 +98,7 @@ function makeRequest(options, callback) {
   // response handler
   // +++ Return video view count +++
   function getResponse() {
+    console.log('at getresponse');
     try {
       if (httpRequest.readyState === 4) {
         if (httpRequest.status === 200 || httpRequest.status === 204) {
